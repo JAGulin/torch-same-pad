@@ -16,7 +16,7 @@ def _calc_pad(size: int,
 
 
 def _get_compressed(item: Union[int, Sequence[int]], index: int):
-    if isinstance(item, collections.Sequence):
+    if isinstance(item, collections.abc.Sequence):
         return item[index]
     return item
 
@@ -26,7 +26,7 @@ def get_pad(size: Union[int, Sequence[int]],
             stride: Union[int, Sequence[int]] = 1,
             dilation: Union[int, Sequence[int]] = 1):
     len_size = 1
-    if isinstance(size, collections.Sequence):
+    if isinstance(size, collections.abc.Sequence):
         len_size = len(size)
     pad = ()
     for i in range(len_size):
